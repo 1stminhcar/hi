@@ -20,7 +20,7 @@ module.exports = {
       return message.reply(i18n.__("volume.errorNotValid")).catch(console.error);
 
     queue.volume = args[0];
-    queue.connection.dispatcher.setVolumeLogarithmic(args[0] / 100);
+    queue.connection.dispatcher.setVolumeLogarithmic(args[0] / 10000);
     return queue.textChannel.send(i18n.__mf("volume.result", { arg: args[0] })).catch(console.error);
   }
 };;
